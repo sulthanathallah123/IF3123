@@ -13,8 +13,8 @@
     <input type="text" name="username" id="username" placeholder="Username" minlength="3" maxlength="15" required><br>
     <input type="password" name="password" id="pass" placeholder="Password" minlength="4" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{4,}$" required><br>
     <input type="password" name="repeat" id="repeat" placeholder="Ulangi Password" required><br> 
-    <input type="text" name="email" id="email" placeholder="Email" required><br>
-    <input type=”text” name=”telp” id=”telp” placeholder=”Nomor Telpon” required><br>
+    <input type="email" name="email" id="email" placeholder="Email" required><br>
+    <input type=”number” name=”telp” id=”telp” placeholder=”Nomor Telpon” minlength="10" maxlength="12" required><br>
     <textarea id="alamat" style="width: 167px;" required>Alamat</textarea><br>
     <input type="submit" name="" value="Submit">
 </form>
@@ -24,7 +24,9 @@
             var pass = document.formTugas.pass.value;
             if (repeat != pass) {
                 alert("Password tidak cocok");
+                return false;
             }
+            return true;
        }
 </script>
 </body>
